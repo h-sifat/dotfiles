@@ -1,0 +1,239 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+snippet imp_ "import package" b
+import ${1:var} from "${2:package}";
+endsnippet
+
+snippet imp "import package" w
+import $1 from "${1:package}";
+endsnippet
+
+
+snippet cl "console.log()" w
+console.log($1)
+endsnippet
+
+snippet ce "console.error()" w
+console.error($1)
+endsnippet
+
+
+snippet cdir "console.dir()" w
+console.dir($1, {depth: null})
+endsnippet
+
+snippet ti "string interpolation" i
+${$1}
+endsnippet
+
+snippet tne "throw new Error()" w
+throw new Error(\`$1\`);
+endsnippet
+
+snippet tnce "throw new CustomError()" w
+throw new ${1:Error_Name}(\`$2\`);
+endsnippet
+
+snippet req_ "const identifier = require('package_name')" w
+const ${1:name} = require("${2:package_name}");
+endsnippet
+
+
+snippet req "const identifier = require('package_name')" w
+const $1 = require("${1:package_name}");
+endsnippet
+
+snippet lt "let var = value;" w
+let ${1:name} = ${2:value};
+endsnippet
+
+snippet ct "const var = value;" w
+const ${1:name} = ${2:value};
+endsnippet
+
+snippet fn "function() {}" w
+function ${1:name}($2) {
+	$3
+}
+endsnippet
+
+snippet afn "async function() {}" w
+async function ${1:name}($2) {
+	$3
+}
+endsnippet
+
+snippet cm "class method" w
+${1:method}(${2:params}) {
+	$3
+}
+endsnippet
+
+snippet acm "async class method" w
+async ${1:method}($2) {
+	$3
+}
+endsnippet
+
+snippet fori "for(let i = 0; i < count; i++) {}" b
+for(let i = ${1:0}; i < ${2:count}; i${3:++}) {$4}
+endsnippet
+
+snippet forj "for(let j = 0; j < count; j++) {}" b
+for(let j = ${1:0}; j < ${2:count}; j${3:++}) {$4}
+endsnippet
+
+snippet forof "for of loop" w
+for (const ${1:item} of ${2:array}) {$3}
+endsnippet
+
+snippet forin "for in loop" w
+for (const ${1:item} in ${2:object}) {$3}
+endsnippet
+
+snippet ifel "if() {} else {}" b
+if(${1}) {
+} else {
+}
+endsnippet
+
+snippet elif "else if(condition)" w
+else if(${1:cond}) {$2}
+endsnippet
+
+snippet iff "if(consdition) {}" w
+if(${1:consdition}) {
+}
+endsnippet
+
+snippet ifs "single if statement" w
+if(${1:condition}) $2
+endsnippet
+
+snippet ifr "if(condition) return ;" w
+if(${1:condition}) return $2;
+endsnippet
+
+snippet ift "if(condition) throw new Error() ;" w
+if(${1:condition}) throw new Error("$2");
+endsnippet
+
+snippet tar "the tarnery operator" w
+(${1:consdition}) ? ${2:value-1} : ${3:value-2}
+endsnippet
+
+snippet af "arrow function" w
+($1) => {$2}
+endsnippet
+
+snippet saf "snippet arrow function" w
+($1) => {$2}
+endsnippet
+
+snippet class "a basic class structure" w
+class ${1:Name} {
+	constructor($2){$3}
+}
+endsnippet
+
+# for object properties
+
+snippet kv "key: value," w
+${1:key}: ${2:value},
+endsnippet
+
+snippet ps "prop: 'string'" w
+${1:key}: "${2:value}",
+endsnippet
+
+snippet sps "prop: 'string'" w
+"${1:key}": "${2:value}",
+endsnippet
+
+snippet pa "prop: [array]" w
+${1:key}: [${2:values}],
+endsnippet
+
+snippet po "prop: {}" w
+${1:key}: {${2:values}},
+endsnippet
+
+snippet tc "a try catch block" b
+try {
+	$1
+} catch(ex) {
+}
+endsnippet
+
+snippet sc "switch case statement" w
+switch(${1:var}) {
+	case ${2:condition}:
+		break;
+	default:
+}
+endsnippet
+
+snippet me "module.exports" w
+module.exports = {$1}
+endsnippet
+
+snippet isS "typeof var === 'string'" w
+typeof ${1:name} === "string"
+endsnippet
+
+snippet isNES "typeof var === 'string' && var !== ''" w
+typeof ${1:name} === "string" && $1 !== ""
+endsnippet
+
+snippet isN "typeof var === 'number'" w
+typeof ${1:name} === "number"
+endsnippet
+
+snippet isO "typeof var === 'object'" w
+typeof ${1:name} === "object"
+endsnippet
+
+snippet isNNO "typeof var === 'object' && var !== null" w
+typeof ${1:name} === "object" && $1 !== null
+endsnippet
+
+snippet isA "Array.isArray(var)" w
+Array.isArray(${1:var})
+endsnippet
+
+
+snippet isI "Number.isInteger(var)" w
+Number.isInteger(${1:name})
+endsnippet
+
+
+snippet isF "typeof var === 'function'" w
+typeof ${1:name} === "function"
+endsnippet
+
+snippet ed "export default" b
+export default 
+endsnippet

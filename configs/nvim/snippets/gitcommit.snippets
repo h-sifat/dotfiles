@@ -1,0 +1,69 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet feat "A new feature" b
+feat(${1:scope}): ${2:message}
+endsnippet
+
+snippet fix "A bug fix" b
+fix(${1:scope}): ${2:message}
+endsnippet
+
+snippet docs "Documentation only changes" b
+docs(${1:scope}): ${2:message}
+endsnippet
+
+snippet style "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)" b
+style(${1:scope}): ${2:message}
+endsnippet
+
+snippet refactor "A code change that neither fixes a bug nor adds a feature" b
+refactor(${1:scope}): ${2:message}
+endsnippet
+
+snippet perf "A code change that improves performance" b
+perf(${1:scope}): ${2:message}
+endsnippet
+
+snippet test "Adding missing tests or correcting existing tests" b
+test(${1:scope}): ${2:message}
+endsnippet
+
+snippet build "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)" b
+build(${1:scope}): ${2:message}
+endsnippet
+
+snippet ci "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)" b
+ci(${1:scope}): ${2:message}
+endsnippet
+
+snippet chore "Other changes that don't modify src or test files" b
+chore(${1:scope}): ${2:message}
+endsnippet
+
+snippet revert "Reverts a previous commit" b
+revert(${1:scope}): ${2:message}
+endsnippet

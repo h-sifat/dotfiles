@@ -1,0 +1,81 @@
+{
+  // Explorer
+  "explorer.width": 40,
+  "suggest.noselect": false,
+  "explorer.file.column.clip.copy": "󰆏",
+  "explorer.file.column.clip.cut": "󰆐",
+
+  "explorer.file.child.template": "[git | 2] [selection | clip | 1] [indent][icon | 1] [diagnosticError & 1][filename omitCenter 1][modified][readonly] [linkIcon & 1][link growRight 1 omitCenter 5]",
+
+  "explorer.icon.enableNerdfont": true,
+  "explorer.icon.source": "nvim-web-devicons",
+  "explorer.file.column.link.copy": "x",
+
+  "explorer.buffer.root.template": "[icon & 1] OPEN EDITORS",
+  "explorer.file.root.template": "[icon & 1] PROJECT ([root])",
+
+  "explorer.previewAction.onHover": false,
+  "explorer.file.reveal.auto": false,
+  "explorer.file.showHiddenFiles": true,
+
+  // Diagnostics
+  "diagnostic.refreshOnInsertMode": true,
+  "diagnostic.hintSign": "󰘥",
+  "diagnostic.infoSign": "",
+  "diagnostic.errorSign": "",
+  "diagnostic.warningSign": "",
+  "diagnostic.enable": true,
+  "diagnostic.virtualText": false,
+
+  // floatConfigs
+  "diagnostic.floatConfig": {
+    "title": "─[ Diagnostics ]─",
+    "highlight": "guibg",
+    "rounded": true,
+    "border": true
+  },
+  "hover.floatConfig": {
+    "title": "─[ Hover ]─",
+    "highlight": "guibg",
+    "rounded": true,
+    "border": true
+  },
+  "signature.floatConfig": {
+    "title": "─[ Signature ]─",
+    "highlight": "guibg",
+    "rounded": true,
+    "border": true
+  },
+  "suggest.floatConfig": {
+    "highlight": "guibg",
+    "rounded": true,
+    "border": true
+  },
+
+  "diagnostic.format": "%message [%source]",
+  "diagnostic.checkCurrentLine": true,
+
+  "links.tooltip": true,
+  "links.highlight": true,
+
+  // Snippets
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "snippets.extends": {
+    "typescriptreact": ["javascript"],
+    "javascriptreact": ["javascript"],
+    "typescript": ["javascript"]
+  },
+
+  // Other
+  "workspace.rootPatterns": [
+    ".git",
+    ".hg",
+    ".projections.json",
+    "package.json",
+    "Cargo.toml"
+  ],
+  "coc.preferences.extensionUpdateCheck": "daily",
+  "coc.preferences.formatOnSave": true,
+  "svelte.enable-ts-plugin": true,
+  "cSpell.language": "en"
+}

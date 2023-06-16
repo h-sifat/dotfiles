@@ -1,0 +1,84 @@
+[global_config]
+  handle_size = 0
+  geometry_hinting = True
+  borderless = True
+  title_transmit_bg_color = "#5e5c64"
+  inactive_color_offset = 0.909688013136289
+  title_use_system_font = False
+  title_font = JetBrainsMonoNL Nerd Font 14
+[keybindings]
+  zoom_in = <Primary>equal
+  new_tab = <Alt>n
+  cycle_next = ""
+  cycle_prev = ""
+  go_next = ""
+  go_prev = ""
+  go_up = <Alt>k
+  go_down = <Alt>j
+  go_left = <Alt>h
+  go_right = <Alt>l
+  rotate_cw = ""
+  rotate_ccw = ""
+  split_horiz = <Shift><Alt>h
+  split_vert = <Shift><Alt>v
+  close_term = <Alt>q
+  toggle_scrollbar = <Alt>s
+  search = <Alt>f
+  page_up = Page_Up
+  page_down = Page_Down
+  page_up_half = <Shift>Page_Up
+  page_down_half = <Shift>Page_Down
+  line_up = <Alt>bracketleft
+  line_down = <Alt>bracketright
+  close_window = ""
+  resize_up = <Primary><Shift>k
+  resize_down = <Primary><Shift>j
+  resize_left = <Primary><Shift>h
+  resize_right = <Primary><Shift>l
+  toggle_zoom = <Alt>o
+  scaled_zoom = ""
+  next_tab = <Alt>semicolon
+  prev_tab = <Alt>slash
+  full_screen = ""
+  reset = ""
+  reset_clear = ""
+  hide_window = ""
+  group_all = ""
+  ungroup_all = ""
+  group_tab = ""
+  ungroup_tab = ""
+  new_window = <Primary><Shift>n
+  new_terminator = ""
+  insert_number = ""
+  insert_padded = ""
+  edit_window_title = ""
+  edit_tab_title = ""
+  edit_terminal_title = ""
+  layout_launcher = ""
+  help = ""
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_darkness = 0.83
+    background_type = transparent
+    cursor_color = "#aaaaaa"
+    font = JetBrainsMono Nerd Font Propo 18
+    show_titlebar = False
+    scrollback_infinite = True
+    palette = "#2e3436:#cc0000:#4e9a06:#c4a000:#1c71d8:#813d9c:#06989a:#d3d7cf:#555753:#ef2929:#8ae234:#fce94f:#62a0ea:#c061cb:#34e2e2:#eeeeec"
+    use_system_font = False
+    bold_is_bright = True
+  [[Sifat]]
+    cursor_color = "#aaaaaa"
+    font = JetBrainsMonoNL Nerd Font Propo 17
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[window0]]]
+      type = Window
+      parent = ""
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+[plugins]
