@@ -63,7 +63,8 @@
   "snippets.extends": {
     "typescriptreact": ["javascript"],
     "javascriptreact": ["javascript"],
-    "typescript": ["javascript"]
+    "typescript": ["javascript"],
+    "svelte": ["javascript"]
   },
 
   // Other

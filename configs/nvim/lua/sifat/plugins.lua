@@ -33,4 +33,12 @@ require("lazy").setup({
 			require("nvterm").setup(opts)
 		end,
 	},
+	{
+		"iamcco/markdown-preview.nvim",
+		config = function()
+			vim.fn["mkdp#util#install"]()
+		end,
+
+		ft = { "markdown" },
+	},
 })

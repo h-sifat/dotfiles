@@ -11,7 +11,7 @@ local executor_commands_for_file_extensions = {
 	mjs = "node",
 	cjs = "node",
 	js = "node",
-	ts = "ts-node",
+	ts = "ts-node --esm ",
 	lua = "lua",
 	sh = "bash",
 	rs = function(filepath)
@@ -111,11 +111,23 @@ local keymaps = {
 		["<leader>a"] = { "<Plug>(coc-codeaction-cursor)", "Code action" },
 		["<leader>f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Telescope find files" },
 		["<leader>g"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Telescope live grep" },
+		["<leader>c"] = {
+			function()
+				require("Comment.api").toggle.linewise.current()
+			end,
+			"Toggle comment",
+		},
+		["<C-P>"] = { "<cmd> MarkdownPreviewToggle<CR>", "Toggle markdown preview" },
 	},
 	v = {
 		["<leader>y"] = { '"+y', "Copy to system clipboard" },
 		J = { ":m '>+1<CR>gv=gv", "Move selection down" },
 		K = { ":m '<-2<CR>gv=gv", "Move selection up" },
+
+		["<leader>c"] = {
+			"<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
+			"Toggle comment",
+		},
 	},
 	t = {
 		["<C-x>"] = { vim.api.nvim_replace_termcodes("<C-\\><C-N>", true, true, true), "Escape terminal mode" },
