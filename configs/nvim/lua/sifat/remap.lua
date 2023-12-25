@@ -11,25 +11,12 @@ local executor_commands_for_file_extensions = {
 	mjs = "node",
 	cjs = "node",
 	js = "node",
-	ts = "ts-node --esm ",
+	ts = "ts-node --swc ",
 	lua = "lua",
 	sh = "bash",
-	rs = function(filepath)
-		-- remove common path before the current working directory
-		filepath = "." .. filepath:gsub(vim.fn.getcwd(), "")
-		-- removing the extension ".rs"
-		local executable_path = filepath:sub(1, -4)
-		-- compile, run, delete (force)
-		-- command: rustc -o <executable_path> <file_path> && <executable_path>; rm -f <executable_path>
-		return "rustc -o "
-			.. executable_path
-			.. " "
-			.. filepath
-			.. " && "
-			.. executable_path
-			.. "; rm -f "
-			.. executable_path
-	end,
+	py = "python3",
+	go = "go run",
+	rs = "cargo run",
 }
 
 local execute_current_file = function()
@@ -54,14 +41,14 @@ local execute_current_file = function()
 end
 
 local terminal_mappings = {
-	["<leader>th"] = {
+	["<leader>tj"] = {
 		function()
 			require("nvterm.terminal").new("horizontal")
 		end,
 		"New horizontal term",
 	},
 
-	["<leader>tj"] = {
+	["<leader>tt"] = {
 		function()
 			require("nvterm.terminal").new("vertical")
 		end,
@@ -93,21 +80,21 @@ local keymaps = {
 		["<leader>/"] = { "<cmd> tabp <CR>", "Prev tab" },
 		["<leader>;"] = { "<cmd> tabn <CR>", "Next tab" },
 		["<leader>2"] = { "<cmd> tabc <CR>", "Close tab" },
-		J = { "mzJ`z", "Remove line break" },
 		["<leader>p"] = { '"+p', "Paste from system clipboard" },
 		["<C-Right>"] = { "<cmd> vertical resize +2 <CR>", "Horizontal resize +" },
 		["<C-Left>"] = { "<cmd> vertical resize -2 <CR>", "Horizontal resize -" },
 		["<C-Up>"] = { "<cmd> resize +2 <CR>", "vertical resize +" },
 		["<C-Down>"] = { "<cmd> resize -2 <CR>", "vertical resize -" },
 		["<Esc>"] = { ":noh <CR>", "Clear highlights" },
-
-		["<leader>rn"] = { "<Plug>(coc-rename)", "Rename symbols" },
+		["<leader>r"] = { "<Plug>(coc-rename)", "Rename symbols" },
 		["<leader>d"] = { ":<C-u>CocList diagnostics<cr>", "Show all diagnostics" },
-		["<leader>x"] = { ":<C-u>CocList extensions<cr>", "Show all extensions " },
+		["<leader>x"] = { ":<C-u>CocList extensions<cr>", "Show all extensions" },
+		["<leader>m"] = { ":<C-u>CocList marketplace<cr>", "Open marketplace" },
 		["<leader>i"] = { "<Plug>(coc-fix-current)", "Apply Quickfix" },
 		["<leader>z"] = { ":<C-u>CocList commands<cr>", "List all commands" },
 		["<leader>o"] = { ":<C-u>CocList outline<cr>", "Find symbol of current document" },
 		["<leader>s"] = { ":<C-u>CocList -I symbols<cr>", "Search workspace symbols" },
+		["<leader>u"] = { ":<C-u>CocCommand snippets.editSnippets<cr>", "Search workspace symbols" },
 		["<leader>a"] = { "<Plug>(coc-codeaction-cursor)", "Code action" },
 		["<leader>f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Telescope find files" },
 		["<leader>g"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Telescope live grep" },

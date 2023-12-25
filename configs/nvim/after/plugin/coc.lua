@@ -76,8 +76,8 @@ keyset("i", "<S-TAB>", [[coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"]], opts)
 vim.cmd([[
 inoremap <silent><expr> <CR>
   \ coc#pum#visible() ? coc#pum#confirm() :
-  \ coc#expandableOrJumpable() ?
-  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+  \ coc#expandable() ?
+  \ "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand',''])\<CR>" :
   \ "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 ]])
 

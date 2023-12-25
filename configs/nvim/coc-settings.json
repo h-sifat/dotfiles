@@ -59,7 +59,8 @@
   "links.highlight": true,
 
   // Snippets
-  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets",
+  "snippets.userSnippetsDirectory": "~/.config/nvim/snippets/ultisnips",
+  "snippets.textmateSnippetsRoots": ["~/.config/nvim/snippets/vscode"],
   "snippets.extends": {
     "typescriptreact": ["javascript"],
     "javascriptreact": ["javascript"],

@@ -27,6 +27,10 @@ local options = {
 	colorcolumn = "80",
 }
 
+vim.cmd([[
+  autocmd FileType python let b:coc_root_patterns = ['.git', '.env', 'venv', '.venv', 'setup.cfg', 'setup.py', 'pyproject.toml', 'pyrightconfig.json']
+]])
+
 for option, value in pairs(options) do
 	vim.opt[option] = value
 end
