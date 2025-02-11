@@ -1,9 +1,16 @@
 vim.g.mapleader = " "
-vim.keymap.set("n", "<leader>e", ":CocCommand explorer <cr>")
 
 local function table_merge(base, new)
 	for key, value in pairs(new) do
 		base[key] = value
+	end
+end
+
+local function toggle_jump_float()
+	if vim.fn.win_gettype() == "popup" then
+		vim.cmd("wincmd w")
+	elseif vim.fn["coc#float#has_float"]() ~= 0 then
+		vim.fn["coc#float#jump"]()
 	end
 end
 
@@ -98,6 +105,7 @@ local keymaps = {
 		["<leader>a"] = { "<Plug>(coc-codeaction-cursor)", "Code action" },
 		["<leader>f"] = { "<cmd>lua require('telescope.builtin').find_files()<cr>", "Telescope find files" },
 		["<leader>g"] = { "<cmd>lua require('telescope.builtin').live_grep()<cr>", "Telescope live grep" },
+		["<leader>y"] = { ":CocCommand snippets.editSnippets<cr>", "Edit curernt file's language's snippets" },
 		["<leader>c"] = {
 			function()
 				require("Comment.api").toggle.linewise.current()
@@ -105,6 +113,7 @@ local keymaps = {
 			"Toggle comment",
 		},
 		["<C-P>"] = { "<cmd> MarkdownPreviewToggle<CR>", "Toggle markdown preview" },
+		["U"] = { toggle_jump_float, "toggle jump float window" },
 	},
 	v = {
 		["<leader>y"] = { '"+y', "Copy to system clipboard" },

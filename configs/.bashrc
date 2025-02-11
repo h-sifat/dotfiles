@@ -147,7 +147,7 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 export NODE_PATH=$(npm root --location=global)
 
 # Fon deno
-export DENO_INSTALL="/home/rider_c/.deno"
+export DENO_INSTALL="~/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 . "$HOME/.cargo/env"
 HISTCONTROL=ignoreboth

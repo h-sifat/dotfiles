@@ -24,70 +24,47 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet b "bold" w
-**$1**$2
-endsnippet
-
-snippet h1 "Header 1" w
-# $1
-endsnippet
-snippet h2 "Header 2" w
-## $1
-endsnippet
-snippet h3 "Header 3" w
-### $1
-endsnippet
-snippet h4 "Header 4" w
-#### $1
-endsnippet
-snippet h5 "Header 5" w
-##### $1
-endsnippet
-snippet h6 "Header 6" w
-###### $1
-endsnippet
-
-snippet ic "inline code" w
-\`$1\`
-endsnippet
-
-snippet ik "inline katex" w
-$$1$
-endsnippet
-
-snippet cb "code block" w
-\`\`\`${1:lang}
-$2
-\`\`\`
-endsnippet
-
-snippet a "link" w
-[${1:Link Name}](${2:href})
+snippet lt "let" w
+let ${1:var} = $2;
 endsnippet
 
 
-snippet img "image" w
-![${1:Image Name}](${2:href})
+snippet ltm "let mut" w
+let mut ${1:var} = $2;
 endsnippet
 
-snippet kbd "<kbd></kbd>" w
-<kbd>$1</kbd>
+snippet fn "Define a function" w
+fn ${1:name}($2)$3 {
+	${4:todo()!}
+}
 endsnippet
 
-snippet kb "Katex Block" b
-$$
-$1
-$$
+snippet afn "Define an async function" w
+async fn ${1:name}($2)$3 {
+	${4:todo()!}
+}
 endsnippet
 
-snippet beg "Begin Katex Function" w
-\begin{${1:func}}
+snippet af "clouser" w
+|$1| {$2}
+endsnippet
+
+snippet maf "move clouser" w
+move |$1| {$2}
+endsnippet
+
+snippet amaf "async move clouser" w
+async move |$1| {$2}
+endsnippet
+
+snippet iflt "if let" w
+if let Some($1) = $2 {
+	$3
+}
+endsnippet
+
+snippet ab "async block" w
+async $1 {
 	$2
-\end{${1}}
-endsnippet
-
-snippet kb "Ketex Block" w
-$$
-$1
-$$
+}
 endsnippet

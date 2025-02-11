@@ -26,6 +26,8 @@
   "diagnostic.warningSign": "",
   "diagnostic.enable": true,
   "diagnostic.virtualText": false,
+  "diagnostic.format": "%message [%source]",
+  "diagnostic.checkCurrentLine": true,
 
   // floatConfigs
   "diagnostic.floatConfig": {
@@ -52,9 +54,6 @@
     "border": true
   },
 
-  "diagnostic.format": "%message [%source]",
-  "diagnostic.checkCurrentLine": true,
-
   "links.tooltip": true,
   "links.highlight": true,
 
@@ -67,6 +66,10 @@
     "typescript": ["javascript"],
     "svelte": ["javascript"]
   },
+  // rust analyzer
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": true,
+  "workspace.ignoredFolders": ["$HOME", "$HOME/.cargo/**", "$HOME/.rustup/**"],
 
   // Other
   "workspace.rootPatterns": [
@@ -79,5 +82,7 @@
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnSave": true,
   "svelte.enable-ts-plugin": true,
-  "cSpell.language": "en"
+  "cSpell.language": "en",
+  "snippets.ultisnips.pythonPrompt": false,
+  "cSpell.userWords": []
 }

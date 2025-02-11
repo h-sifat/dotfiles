@@ -23,23 +23,3 @@
 #		endsnippet
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
-
-snippet el "export let" w
-export let $1
-endsnippet
-
-snippet !ct "const declaration" w
-{@const $1 = $2}
-endsnippet
-
-snippet !each "each loop" w
-{#each ${1:array} as ${2:element} (${3:key})}
-	$4
-{/each}
-endsnippet
-
-snippet !if "{#if}" w
-{#if $1}
-	$2
-{/if}
-endsnippet
